@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download | Inshare- File sharing system Made easy</title>
+</head>
+<body>
+    <img src="" class="logo" alt="Logo">
+    <section class="download"> 
+        <img src="" class="download_img" alt="download">
+        <%  if(locals.error){ %>
+            <h4><%= locals.error  %>NOOO!!!!</h4>
+            <% }else{ %>
+                <h2>your file is ready to download</h2>
+                <p>Link expires in 24 hours</p>
+                <div class="download__meta">
+                    <h4><%= filename %></h4>
+                    <small><%= parseInt(fileSize/1000) %>KB</small>
+                </div>
+                <div class="send-btn-container">
+                    <a href="<%= downloadLink %>">Download File</a>
+                </div>
+                <% } %>
+    </section>
+</body>
+</html>
